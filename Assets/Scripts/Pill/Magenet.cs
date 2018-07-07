@@ -20,13 +20,14 @@ public class Magenet : MonoBehaviour
 	void Update () {
 		
 	}
+    //OnTriggerStay2D
 
     void OnTriggerStay2D(Collider2D collider)
     {
         if (collider.gameObject.layer == 10|| collider.gameObject.layer == 9)
         {
 
-            MagenetedObject mo = collider.GetComponent<MagenetedObject>();
+            MagenetedObject mo = collider.gameObject.GetComponent<MagenetedObject>();
             int dic=mo.maganet==cc.GetComponent<MagenetedObject>() .maganet? -1:1;
             if (cc.GetComponent<MagenetedObject>().maganet==MagenetedObject.Maganet.None||mo.maganet==MagenetedObject.Maganet.None)
             {

@@ -17,9 +17,25 @@ public class GravityArea : MonoBehaviour
 		
 	}
 
-   void  OnTriggerEnter2D(Collider2D c2d)
+    //void OnCollisionEnter2D(Collision2D c2d)
+    //{
+    //    if (c2d.gameObject.layer == 9)
+    //    {
+    //        rawgravaty = c2d.gameObject.GetComponent<CharacterContral>().GravatyFactor;
+    //        c2d.gameObject.GetComponent<CharacterContral>().GravatyFactor = GravatyFactory;
+    //    }
+    //}
+    //void OnCollisionExit2D(Collision2D c2d)
+    //{
+    //    if (c2d.gameObject.layer == 9)
+    //    {
+    //        rawgravaty = c2d.gameObject.GetComponent<CharacterContral>().GravatyFactor;
+    //        c2d.gameObject.GetComponent<CharacterContral>().GravatyFactor = GravatyFactory;
+    //    }
+    //}
+    void OnTriggerEnter2D(Collider2D c2d)
     {
-        if (c2d.gameObject.layer==9)
+        if (c2d.gameObject.layer == 9)
         {
             rawgravaty = c2d.GetComponent<CharacterContral>().GravatyFactor;
             c2d.GetComponent<CharacterContral>().GravatyFactor = GravatyFactory;

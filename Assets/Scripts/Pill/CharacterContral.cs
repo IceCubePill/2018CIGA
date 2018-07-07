@@ -113,7 +113,7 @@ public class CharacterContral : MonoBehaviour
 
     void CheckFloor()
     {
-       RaycastHit2D rh2d= Physics2D.Raycast(transform.position, Vector2.down, circleCollider.radius + 0.5f, (1 << 12) );
+       RaycastHit2D rh2d= Physics2D.Raycast(transform.position, Vector2.down, circleCollider.radius +2f, (1 << 12) );
         if (rh2d==false)
         {
            Debug.Log("jump");

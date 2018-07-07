@@ -27,6 +27,8 @@ public class CharacterContral : MonoBehaviour
     private Rigidbody2D r2d;
     private CircleCollider2D circleCollider;
     private Magenet mage;
+
+    private GameContralor contralor;
     // Use this for initialization
     void Start ()
     {
@@ -35,6 +37,7 @@ public class CharacterContral : MonoBehaviour
         r2d = GetComponent<Rigidbody2D>();
         mage = GetComponentInChildren<Magenet>();
         circleCollider = GetComponent<CircleCollider2D>();
+        contralor = FindObjectOfType<GameContralor>();
     }
 	
 	// Update is called once per frame
@@ -113,7 +116,7 @@ public class CharacterContral : MonoBehaviour
 
     void CheckFloor()
     {
-       RaycastHit2D rh2d= Physics2D.Raycast(transform.position, Vector2.down, circleCollider.radius +2f, (1 << 12) );
+       RaycastHit2D rh2d= Physics2D.Raycast(transform.position, Vector2.down*GravatyFactor, circleCollider.radius*transform.localScale.x*2, (1 << 12) );
         if (rh2d==false)
         {
            Debug.Log("jump");
@@ -130,5 +133,11 @@ public class CharacterContral : MonoBehaviour
     void CheckGravity()
     {
         r2d.AddForce(new Vector2(0,-GravatyFactor*9.8f*r2d.mass));
+    }
+
+
+    public void Dead()
+    {
+        contralor.QuickLoad();
     }
 }

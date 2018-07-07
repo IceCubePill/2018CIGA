@@ -14,12 +14,16 @@ public class CharacterContral : MonoBehaviour
     //public bool IsMagnet_N = true;
     [Header("速度")]
     public float Speed = 100;
+
+    [Header("重力因子")]
+    public  float GravatyFactor=1;
+
+
     private float t_right;
 
 
     private SpriteRenderer sr;
     private MagenetedObject mo;
-
     private Rigidbody2D r2d;
     private CircleCollider2D circleCollider;
     private Magenet mage;
@@ -38,7 +42,7 @@ public class CharacterContral : MonoBehaviour
 	{
 	    CheckInput();
 	    CheckFloor();
-
+	    CheckGravity();
 
 	}
     
@@ -121,5 +125,10 @@ public class CharacterContral : MonoBehaviour
             isflood = false;
          
         }
+    }
+    
+    void CheckGravity()
+    {
+        r2d.AddForce(new Vector2(0,-GravatyFactor*9.8f*r2d.mass));
     }
 }

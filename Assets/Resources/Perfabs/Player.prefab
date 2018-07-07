@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 50987854605779766}
   - component: {fileID: 114860992599508432}
   - component: {fileID: 114193430251317386}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -140,6 +140,7 @@ MonoBehaviour:
   isflood: 1
   IsP2: 0
   Speed: 10
+  GravatyFactor: 1
 --- !u!114 &114501074923245036
 MonoBehaviour:
   m_ObjectHideFlags: 1

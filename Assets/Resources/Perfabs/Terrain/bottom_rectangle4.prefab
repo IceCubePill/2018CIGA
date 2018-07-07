@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4401813287232552}
   - component: {fileID: 212548696230200566}
-  - component: {fileID: 60884149975437200}
+  - component: {fileID: 61769662633418314}
   m_Layer: 0
   m_Name: bottom_rectangle4
   m_TagString: Untagged
@@ -41,8 +41,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!60 &60884149975437200
-PolygonCollider2D:
+--- !u!61 &61769662633418314
+BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -63,34 +63,9 @@ PolygonCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 2.665, y: -0.155}
-      - {x: 2.645, y: 0.635}
-      - {x: 2.615, y: 0.775}
-      - {x: 2.5549998, y: 0.895}
-      - {x: 2.475, y: 0.97499996}
-      - {x: 2.305, y: 1.025}
-      - {x: 2.205, y: 1.025}
-      - {x: 1.635, y: 0.97499996}
-      - {x: 1.265, y: 1.045}
-      - {x: 1.2049999, y: 1.035}
-      - {x: 0.935, y: 1.005}
-      - {x: 0.445, y: 0.98499995}
-      - {x: 0.435, y: 0.97499996}
-      - {x: -0.255, y: 0.965}
-      - {x: -0.615, y: 0.97499996}
-      - {x: -1.035, y: 0.995}
-      - {x: -1.8449999, y: 0.955}
-      - {x: -2.055, y: 1.015}
-      - {x: -2.2549999, y: 1.015}
-      - {x: -2.325, y: 1.0749999}
-      - {x: -2.375, y: 1.095}
-      - {x: -2.715, y: 1.095}
-      - {x: -2.715, y: -1.095}
-      - {x: 2.715, y: -1.095}
-      - {x: 2.715, y: -0.475}
-      - {x: 2.695, y: -0.285}
+  serializedVersion: 2
+  m_Size: {x: 5.43, y: 2.19}
+  m_EdgeRadius: 0
 --- !u!212 &212548696230200566
 SpriteRenderer:
   m_ObjectHideFlags: 1

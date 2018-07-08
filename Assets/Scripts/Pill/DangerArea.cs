@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DangerArea : MonoBehaviour {
-
+public class DangerArea : MonoBehaviour
+{
+    private AudioSource AS;
 	// Use this for initialization
-	void Start () {
-		
+	void Start ()
+	{
+	    AS = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -19,6 +21,7 @@ public class DangerArea : MonoBehaviour {
         if (collider2D.gameObject.layer==9)
         {
             collider2D.GetComponent<CharacterContral>().Dead();
+            AS.Play();
         }
     }
 }

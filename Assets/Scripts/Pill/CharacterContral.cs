@@ -119,7 +119,8 @@ public class CharacterContral : MonoBehaviour
             }
             else
             {
-                sr.color = Color.white;
+                //sr.color = Color.white;
+                sr.sprite = Sprite_Normal;
                 mo.maganet = MagenetedObject.Maganet.None;
             }
         }

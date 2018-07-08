@@ -7,6 +7,8 @@ public class GravityArea : MonoBehaviour
     public float GravatyFactory = -1;
 
     private float rawgravaty;
+
+    private GameObject player;
 	// Use this for initialization
 	void Start () {
 		
@@ -37,15 +39,24 @@ public class GravityArea : MonoBehaviour
     {
         if (c2d.gameObject.layer == 9)
         {
+            player = c2d.gameObject;
             rawgravaty = c2d.GetComponent<CharacterContral>().GravatyFactor;
             c2d.GetComponent<CharacterContral>().GravatyFactor = GravatyFactory;
         }
     }
-    void OnTriggerExit2D(Collider2D c2d)
+    //void OnTriggerExit2D(Collider2D c2d)
+    //{
+    //    if (c2d.gameObject.layer == 9)
+    //    {
+    //        c2d.GetComponent<CharacterContral>().GravatyFactor = rawgravaty;
+    //    }
+    //}
+
+    public void Exit2D()
     {
-        if (c2d.gameObject.layer == 9)
+        if (player!=null)
         {
-            c2d.GetComponent<CharacterContral>().GravatyFactor = rawgravaty;
+            player.GetComponent<CharacterContral>().GravatyFactor = rawgravaty;
         }
     }
 }

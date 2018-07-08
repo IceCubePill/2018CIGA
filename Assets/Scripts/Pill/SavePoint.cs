@@ -2,17 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(BoxCollider2D))]
+
 public class SavePoint : MonoBehaviour
 {
-    private BoxCollider2D bc2d;
+
 	// Use this for initialization
     private Vector2 SavePosition_P1=Vector2.zero;
     private Vector2 SavePosition_P2=Vector2.zero;
     private GameContralor contralor;
 	void Start ()
 	{
-	    bc2d = GetComponent<BoxCollider2D>();
+
 	    contralor = FindObjectOfType<GameContralor>();
 	}
 	

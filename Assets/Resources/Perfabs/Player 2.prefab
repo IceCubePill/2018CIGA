@@ -139,8 +139,9 @@ MonoBehaviour:
   IsContral: 1
   isflood: 1
   IsP2: 1
-  Speed: 10
+  Speed: 100
   GravatyFactor: 1
+  MultyGravaty: 15
 --- !u!114 &114501074923245036
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -165,7 +166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maganet: 0
-  MaxFroce: 300
+  MaxFroce: 1500
 --- !u!212 &212201743540044508
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -179,6 +180,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:

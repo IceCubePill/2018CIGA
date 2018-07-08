@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Assets.Scripts.Pill;
 using UnityEngine;
 
 public class CharacterContral : MonoBehaviour
@@ -18,16 +19,19 @@ public class CharacterContral : MonoBehaviour
     [Header("重力因子")]
     public  float GravatyFactor=1;
 
-
+    [Header("多倍重力")]
+    public float MultyGravaty = 3;
     private float t_right;
 
-
+    public Sprite Sprite_Red;
+    public Sprite Sprite_Blue;
+    public Sprite Sprite_Normal;
     private SpriteRenderer sr;
     private MagenetedObject mo;
     private Rigidbody2D r2d;
     private CircleCollider2D circleCollider;
     private Magenet mage;
-
+    private IsJump jump;
     private GameContralor contralor;
     // Use this for initialization
     void Start ()
@@ -38,13 +42,14 @@ public class CharacterContral : MonoBehaviour
         mage = GetComponentInChildren<Magenet>();
         circleCollider = GetComponent<CircleCollider2D>();
         contralor = FindObjectOfType<GameContralor>();
+        jump = GetComponentInChildren<IsJump>();
     }
 	
 	// Update is called once per frame
 	void FixedUpdate ()
 	{
 	    CheckInput();
-	    CheckFloor();
+	    //CheckFloor();
 	    CheckGravity();
 
 	}
@@ -53,12 +58,13 @@ public class CharacterContral : MonoBehaviour
     {
         if (!IsP2)
         {
-            if (!isflood)
+            if (isflood)
             {
                  t_right = (Input.GetKey(KeyCode.D) ? 1 : 0) - (Input.GetKey(KeyCode.A) ? 1 : 0);
                 if (t_right != 0)
                 {
                      transform.Translate(t_right * Speed * Time.fixedDeltaTime, 0, 0);
+                     
                 }
             }
             if ((Input.GetKey(KeyCode.J) || Input.GetKey(KeyCode.K)) && !(Input.GetKey(KeyCode.J) && Input.GetKey(KeyCode.K)))
@@ -82,7 +88,7 @@ public class CharacterContral : MonoBehaviour
         }
         else
         {
-            if (!isflood)
+            if (isflood)
             {
                 t_right = (Input.GetKey(KeyCode.RightArrow) ? 1 : 0) - (Input.GetKey(KeyCode.LeftArrow) ? 1 : 0);
                 if (t_right != 0)
@@ -132,7 +138,8 @@ public class CharacterContral : MonoBehaviour
     
     void CheckGravity()
     {
-        r2d.AddForce(new Vector2(0,-GravatyFactor*9.8f*r2d.mass));
+        r2d.AddForce(new Vector2(0,-GravatyFactor*9.8f*r2d.mass*MultyGravaty));
+        jump.transform.localPosition=new Vector3(jump.transform.localPosition.z, jump.transform.localPosition.y*(-1*GravatyFactor), jump.transform.localPosition.z);
     }
 
 

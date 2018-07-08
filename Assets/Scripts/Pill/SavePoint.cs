@@ -38,7 +38,6 @@ public class SavePoint : MonoBehaviour
         if (SavePosition_P1!=Vector2.zero && SavePosition_P2!=Vector2.zero)
         {
             contralor.QuickSave(SavePosition_P1,SavePosition_P2);
-            this.enabled = false;
         }
     }
 }

@@ -1,33 +1,34 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class IsJump : MonoBehaviour
+namespace Assets.Scripts.Pill
 {
-    private CharacterContral cc;
-	// Use this for initialization
-	void Start ()
-	{
-	    cc = transform.parent.GetComponent<CharacterContral>();
-	}
-	
-	// Update is called once per frame
-	void Update () {
-        Debug.Log(cc.isflood);
-	}
-
-    void OnTriggerStay2D(Collider2D c2d)
+    public class IsJump : MonoBehaviour
     {
-        if (c2d.gameObject.layer==12)
+        private CharacterContral cc;
+        // Use this for initialization
+        void Start ()
         {
-            cc.isflood = true;;
+            cc = transform.parent.GetComponent<CharacterContral>();
         }
-    }
-    void OnTriggerExit2D(Collider2D c2d)
-    {
-        if (c2d.gameObject.layer == 12)
+	
+        // Update is called once per frame
+        void Update () {
+		
+        }
+
+        void OnTriggerStay2D(Collider2D c2d)
         {
-            cc.isflood = false; ;
+            if (c2d.gameObject.layer==12)
+            {
+                cc.isflood = true;;
+            }
+        }
+        void OnTriggerExit2D(Collider2D c2d)
+        {
+            if (c2d.gameObject.layer == 12)
+            {
+                cc.isflood = false; ;
+            }
         }
     }
 }

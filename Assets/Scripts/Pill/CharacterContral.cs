@@ -71,18 +71,21 @@ public class CharacterContral : MonoBehaviour
             {
                 if (Input.GetKey(KeyCode.J))
                 {
-                    sr.color = Color.blue;
+                    //sr.color = Color.blue;
+                    sr.sprite = Sprite_Blue;
                     mo.maganet = MagenetedObject.Maganet.N;
                 }
                 else if (Input.GetKey(KeyCode.K))
                 {
-                    sr.color = Color.red;
+                    //sr.color = Color.red;
+                    sr.sprite = Sprite_Red;
                     mo.maganet = MagenetedObject.Maganet.S;
                 }
             }
             else
             {
-                sr.color = Color.white;
+                //sr.color = Color.white;
+                sr.sprite = Sprite_Normal;
                 mo.maganet = MagenetedObject.Maganet.None;
             }
         }
@@ -103,12 +106,14 @@ public class CharacterContral : MonoBehaviour
             {
                 if (Input.GetKey(KeyCode.Keypad4))
                 {
-                    sr.color = Color.blue;
+                   // sr.color = Color.blue;
+                    sr.sprite = Sprite_Blue;
                     mo.maganet = MagenetedObject.Maganet.N;
                 }
                 else if (Input.GetKey(KeyCode.Keypad6))
                 {
-                    sr.color = Color.red;
+                    //sr.color = Color.red;
+                    sr.sprite = Sprite_Red;
                     mo.maganet = MagenetedObject.Maganet.S;
                 }
             }
@@ -139,7 +144,7 @@ public class CharacterContral : MonoBehaviour
     void CheckGravity()
     {
         r2d.AddForce(new Vector2(0,-GravatyFactor*9.8f*r2d.mass*MultyGravaty));
-        jump.transform.localPosition=new Vector3(jump.transform.localPosition.z, jump.transform.localPosition.y*(-1*GravatyFactor), jump.transform.localPosition.z);
+        jump.transform.localPosition=new Vector3(jump.transform.localPosition.z, jump.transform.localPosition.y*GravatyFactor, jump.transform.localPosition.z);
     }
 
 

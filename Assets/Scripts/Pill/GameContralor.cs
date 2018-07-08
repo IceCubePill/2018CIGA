@@ -10,7 +10,7 @@ public class GameContralor : MonoBehaviour
     public Vector2 SavePosition_P2;
     // Use this for initialization
     void Start () {
-		Object.DontDestroyOnLoad(this.gameObject);
+	//	Object.DontDestroyOnLoad(this.gameObject);
 	}
 	
 	// Update is called once per frame
@@ -27,6 +27,10 @@ public class GameContralor : MonoBehaviour
     {
         P1_Contral.transform.position = SavePosition_P1;
         P2_Contral.transform.position = SavePosition_P2;
+        P1_Contral.IsContral = true;
+        P2_Contral.IsContral = true;
+        P1_Contral.isflood = true;
+        P2_Contral.isflood = true;
 
     }
 

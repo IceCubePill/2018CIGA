@@ -5,10 +5,13 @@ using UnityEngine;
 public class DangerArea : MonoBehaviour
 {
     private AudioSource AS;
+
+    private GameContralor GC;
 	// Use this for initialization
 	void Start ()
 	{
 	    AS = GetComponent<AudioSource>();
+	    GC = FindObjectOfType<GameContralor>();
 	}
 	
 	// Update is called once per frame
@@ -20,8 +23,20 @@ public class DangerArea : MonoBehaviour
     {
         if (collider2D.gameObject.layer==9)
         {
-            collider2D.GetComponent<CharacterContral>().Dead();
-            AS.Play();
+            StartCoroutine(Dead());
         }
+    }
+
+    IEnumerator Dead()
+    {
+        GC.P1_Contral.IsContral = false;
+        GC.P2_Contral.IsContral = false;
+        AS.Play();
+        while (AS.isPlaying)
+        {
+            yield return new WaitForEndOfFrame();
+        }
+        GC.QuickLoad();
+       
     }
 }

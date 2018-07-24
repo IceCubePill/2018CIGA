@@ -3287,7 +3287,22 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4777429045573280, guid: bca2aac27f9175e43beec9b7feeec4c7, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 50987854605779766, guid: bca2aac27f9175e43beec9b7feeec4c7,
+        type: 2}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 50987854605779766, guid: bca2aac27f9175e43beec9b7feeec4c7,
+        type: 2}
+      propertyPath: m_LinearDrag
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 61765585323792904, guid: bca2aac27f9175e43beec9b7feeec4c7,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bca2aac27f9175e43beec9b7feeec4c7, type: 2}
@@ -11185,7 +11200,26 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4777429045573280, guid: 3a2ac61319a4dde4baec12217756f8c5, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4777429045573280, guid: 3a2ac61319a4dde4baec12217756f8c5, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 50987854605779766, guid: 3a2ac61319a4dde4baec12217756f8c5,
+        type: 2}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 50987854605779766, guid: 3a2ac61319a4dde4baec12217756f8c5,
+        type: 2}
+      propertyPath: m_LinearDrag
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 61748494072275896, guid: 3a2ac61319a4dde4baec12217756f8c5,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3a2ac61319a4dde4baec12217756f8c5, type: 2}

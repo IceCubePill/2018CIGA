@@ -13,15 +13,20 @@ public class CharacterContral : MonoBehaviour
     public bool IsP2=false;
 
     //public bool IsMagnet_N = true;
-    [Header("速度")]
-    public float Speed = 100;
-
+ 
     [Header("重力因子")]
     public  float GravatyFactor=1;
 
     [Header("多倍重力")]
     public float MultyGravaty = 3;
     private float t_right;
+
+    [Header("最大速度")]
+    public float MaxSpeed=100;
+
+    [Header("每帧施加力")]
+    public float AddForce=1000;
+
 
     public Sprite Sprite_Red;
     public Sprite Sprite_Blue;
@@ -36,13 +41,21 @@ public class CharacterContral : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
-        sr = GetComponent<SpriteRenderer>();  
+        sr = GetComponent<SpriteRenderer>();
         mo = GetComponent<MagenetedObject>();
         r2d = GetComponent<Rigidbody2D>();
         mage = GetComponentInChildren<Magenet>();
         circleCollider = GetComponent<CircleCollider2D>();
-        contralor = FindObjectOfType<GameContralor>();
         jump = GetComponentInChildren<IsJump>();
+
+
+        //sr = GetComponentInChildren<SpriteRenderer>();
+        //mo = GetComponentInChildren<MagenetedObject>();
+        //r2d = GetComponent<Rigidbody2D>();
+        //mage = transform.GetChild(0).GetComponentInChildren<Magenet>();
+
+        //contralor = FindObjectOfType<GameContralor>();
+        //jump = transform.GetChild(0).GetComponentInChildren<IsJump>();
     }
 	
 	// Update is called once per frame
@@ -53,7 +66,7 @@ public class CharacterContral : MonoBehaviour
 	        CheckInput();
         }
 	    
-	    //CheckFloor();
+	    CheckFloor();
 	    CheckGravity();
 
 	}
@@ -67,7 +80,12 @@ public class CharacterContral : MonoBehaviour
                  t_right = (Input.GetKey(KeyCode.D) ? 1 : 0) - (Input.GetKey(KeyCode.A) ? 1 : 0);
                 if (t_right != 0)
                 {
-                     transform.Translate(t_right * Speed * Time.fixedDeltaTime, 0, 0);
+                     //transform.Translate(t_right * Speed * Time.fixedDeltaTime, 0, 0);
+                    if (r2d.velocity.magnitude<MaxSpeed)
+                    {
+                        r2d.AddForce(new Vector2(t_right * AddForce, 0));
+                    }
+                    
                      
                 }
             }
@@ -100,7 +118,11 @@ public class CharacterContral : MonoBehaviour
                 t_right = (Input.GetKey(KeyCode.RightArrow) ? 1 : 0) - (Input.GetKey(KeyCode.LeftArrow) ? 1 : 0);
                 if (t_right != 0)
                 {
-                 transform.Translate(t_right * Speed * Time.fixedDeltaTime, 0, 0);
+                    //transform.Translate(t_right * Speed * Time.fixedDeltaTime, 0, 0);
+                    if (r2d.velocity.magnitude < MaxSpeed)
+                    {
+                        r2d.AddForce(new Vector2(t_right * AddForce, 0));
+                    }
                 }
 
             }
@@ -136,12 +158,12 @@ public class CharacterContral : MonoBehaviour
         if (rh2d==false)
         {
            Debug.Log("jump");
-           isflood = true;
+           isflood = false;
         }
         else
         {
             Debug.Log("land");
-            isflood = false;
+            isflood = true;
          
         }
     }

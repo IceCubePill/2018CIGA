@@ -8,7 +8,8 @@ namespace Assets.Scripts.Pill
         // Use this for initialization
         void Start ()
         {
-            cc = transform.parent.GetComponent<CharacterContral>();
+             cc = transform.parent.GetComponent<CharacterContral>();
+            //cc = transform.parent.parent.GetComponent<CharacterContral>();
         }
 	
         // Update is called once per frame

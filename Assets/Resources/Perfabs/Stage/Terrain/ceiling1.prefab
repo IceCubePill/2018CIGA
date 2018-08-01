@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4035074356629568}
   - component: {fileID: 212608792713792602}
   - component: {fileID: 60353163934922910}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: ceiling1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35,8 +35,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1741315390642952}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 52, y: 57, z: 0}
-  m_LocalScale: {x: 37.84998, y: 14.190198, z: 1}
+  m_LocalPosition: {x: 77.14188, y: -18.96515, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0

@@ -89,15 +89,15 @@ public class CharacterContral : MonoBehaviour
                      
                 }
             }
-            if ((Input.GetKey(KeyCode.J) || Input.GetKey(KeyCode.K)) && !(Input.GetKey(KeyCode.J) && Input.GetKey(KeyCode.K)))
+            if ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S)) && !(Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.S)))
             {
-                if (Input.GetKey(KeyCode.J))
+                if (Input.GetKey(KeyCode.W))
                 {
                     //sr.color = Color.blue;
                     sr.sprite = Sprite_Blue;
                     mo.maganet = MagenetedObject.Maganet.N;
                 }
-                else if (Input.GetKey(KeyCode.K))
+                else if (Input.GetKey(KeyCode.S))
                 {
                     //sr.color = Color.red;
                     sr.sprite = Sprite_Red;
@@ -128,15 +128,15 @@ public class CharacterContral : MonoBehaviour
             }
           
 
-            if ((Input.GetKey(KeyCode.Keypad4) || Input.GetKey(KeyCode.Keypad6)) && !(Input.GetKey(KeyCode.Keypad4) && Input.GetKey(KeyCode.Keypad6)))
+            if ((Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.DownArrow)) && !(Input.GetKey(KeyCode.UpArrow) && Input.GetKey(KeyCode.DownArrow)))
             {
-                if (Input.GetKey(KeyCode.Keypad4))
+                if (Input.GetKey(KeyCode.UpArrow))
                 {
                    // sr.color = Color.blue;
                     sr.sprite = Sprite_Blue;
                     mo.maganet = MagenetedObject.Maganet.N;
                 }
-                else if (Input.GetKey(KeyCode.Keypad6))
+                else if (Input.GetKey(KeyCode.DownArrow))
                 {
                     //sr.color = Color.red;
                     sr.sprite = Sprite_Red;

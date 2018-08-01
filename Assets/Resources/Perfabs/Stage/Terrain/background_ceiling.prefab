@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4747745244874344}
   - component: {fileID: 212430038814750546}
-  - component: {fileID: 61248565462722996}
+  - component: {fileID: 61953168002139354}
   m_Layer: 12
   m_Name: background_ceiling
   m_TagString: Untagged
@@ -35,13 +35,13 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1588901469682840}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 51.3, y: -124.9, z: 0}
-  m_LocalScale: {x: 3.5792854, y: -6.6429377, z: 1}
+  m_LocalPosition: {x: 4.54, y: -5.95, z: 0}
+  m_LocalScale: {x: 0.5710788, y: -0.79579175, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &61248565462722996
+--- !u!61 &61953168002139354
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -64,7 +64,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 76, y: 1.48}
+  m_Size: {x: 75.96, y: 2.3200002}
   m_EdgeRadius: 0
 --- !u!212 &212430038814750546
 SpriteRenderer:
